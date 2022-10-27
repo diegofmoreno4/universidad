@@ -36,7 +36,7 @@ alto = 12.0
 prompt = "introduzca grados en Celcius: "
 celcius = float(input (prompt))
 fahrenheit = celcius * (9/5) + 32
-print("El grado en fahrenheit es: " + fahrenheit)
+print("El grado en fahrenheit es: ")
 print(fahrenheit)
 
 #Capitulo 3
