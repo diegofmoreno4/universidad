@@ -39,22 +39,6 @@ fahrenheit = celcius * (9/5) + 32
 print("El grado en fahrenheit es: " + fahrenheit)
 print(fahrenheit)
 
-
-#if x < y:
-#   print('x es menor que y')
-#elif x > y:
-#   print('x es mayor que y')
-#else:
-#   print('x e y son iguales')
-#_______________
-#ent = input('Introduzca la Temperatura Fahrenheit:')
-#try:
-#   fahr = float(ent)
-#   cel = (fahr - 32.0) * 5.0 / 9.0
-#   print(cel)
-#except:
-#   print('Por favor, introduzca un número')
-
 #Capitulo 3
 
 #Ejercicio 1
@@ -126,4 +110,79 @@ try:
     elif cal < 0.6:
         print("Insuficiente") 
 except:    
-    print('Puntuación incorrecta')                  
+    print('Puntuación incorrecta')       
+
+#Capitulo 4
+
+#Ejercicio 1
+#¿Cuál es la utilidad de la palabra clave “def” en Python?
+#a) Es una jerga que significa “este código es realmente estupendo”
+#b) Indica el comienzo de una función
+#c) Indica que la siguiente sección de código indentado debe ser almacenada
+#para usarla más tarde => Respuesta correcta
+#d) b y c son correctas ambas
+#e) Ninguna de las anteriores
+
+#Ejercicio 2
+#Qué mostrará en pantalla el siguiente programa Python?
+#def fred():
+#   print("Zap")
+#def jane():
+#   print("ABC")
+#jane()
+#fred()
+#jane()
+
+#a) Zap ABC jane fred jane
+#b) Zap ABC Zap
+#c) ABC Zap jane
+#d) ABC Zap ABC => Respuesta correcta
+#e) Zap Zap Zap
+
+#Ejercicio 3
+#Reescribe el programa de cálculo del salario, con tarifa-y media para las
+#horas extras, y crea una función llamada calculo_salario que reciba dos 
+#parámetros (horas y tarifa).   
+def calculo_salario():
+    try:
+        prompt = "introduzca Horas: "
+        horas = int(input (prompt))
+        prompt = "introduzca Tarifa: "
+        tarifa = int(input (prompt))
+
+        if int (horas) > 40:
+            extra =  (horas - 40) * 1.5 * (tarifa)
+            horas= 40
+            salario = horas * tarifa + extra
+        else:
+            salario = horas * tarifa               
+        print("salario: ")
+        print(salario)
+    except:    
+        print('Por favor, introduzca un número') 
+calculo_salario()    
+
+#Ejercicio 4
+#Reescribe el programa de calificaciones del capítulo anterior usando una 
+#función llamada calcula_calificacion, que reciba una puntuación como 
+#parámetro y devuelva una calificación como cadena.
+
+def calcula_calificacion():
+    try:
+        prompt = "introduzca Calificación: "
+        cal = float(input (prompt))
+        if cal > 1.0:
+            print('Puntuación incorrecta')
+        elif cal >= 0.9:
+            print("Sobresaliente")
+        elif cal >= 0.7:
+            print("Bien")
+        elif cal >= 0.8:
+            print("Notable")
+        elif cal >= 0.6:
+            print("Suficiente")   
+        elif cal < 0.6:
+            print("Insuficiente") 
+    except:    
+        print('Puntuación incorrecta')
+calcula_calificacion()
