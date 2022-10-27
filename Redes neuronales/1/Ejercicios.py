@@ -186,3 +186,75 @@ def calcula_calificacion():
     except:    
         print('Puntuación incorrecta')
 calcula_calificacion()
+
+#Capitulo 5
+
+#Ejercicio 1
+#Escribe un programa que lea repetidamente números hasta
+#que el usuario introduzca “fin”. Una vez se haya introducido “fin”,
+#muestra por pantalla el total, la cantidad de números y la media de
+#esos números. Si el usuario introduce cualquier otra cosa que no sea un
+#número, detecta su fallo usando try y except, muestra un mensaje de
+#error y pasa al número siguiente.
+total = 0
+cont = 0
+while True:
+    prompt = "introduzca un número: "
+    num = input (prompt)
+    try: 
+        if num != "fin":
+            total = total + int(num)
+            cont = cont + 1 
+            media = total/cont
+        else:
+            print("el total es: total: ",total)   
+            print("La cantidad de número es: ",cont) 
+            print("La media  es: ",media)
+            break 
+    except: 
+        print('dato erroneo')
+
+#Ejercicio 2
+#Escribe otro programa que pida una lista de números como
+#la anterior y al final muestre por pantalla el máximo y mínimo de los
+#números, en vez de la media.
+total = 0
+cont = 0
+mayor = None
+menor = None
+while True:
+    prompt = "introduzca un número: "
+    num = input (prompt)
+    try: 
+        if num == "fin":
+            break 
+        else:
+            num= int(num) 
+            total = total + num
+            cont = cont + 1 
+            if  mayor is None or num > mayor:
+                mayor = num
+            if  menor is None or num < menor:
+                menor = num
+            
+    except: 
+        print('dato erroneo')
+print("el total es: total: ",total)   
+print("La cantidad de número es: ",cont) 
+print("El número mayor es: ",mayor)
+print("El número menor es: ",menor)  
+
+#Resuelva el siguiente ejercicio en el Lenguaje Python:
+#Se desea comprar un vehículo financiado: La forma de pago es una cuota 
+#inicial del 20% y el 80% restante en 40 cuotas mensuales; a cada cuota 
+#mensual se le carga el 2% sobre el saldo de la deuda. Escriba un programa 
+#que reciba como entrada el costo del vehículo, y devuelva el valor de la 
+#cuota inicial y de cada una de las cuotas mensuales
+prompt = "introduzca el costo del vehiculo: "
+costo = input (prompt)
+inicial= costo * 0.20
+saldo = costo - inicial
+recargo = saldo * 0.02
+cuota_mes = saldo/40 + recargo
+print("el 20% de la cuota inicial es : ",inicial)   
+print("el valor de las 40 cuotas aplicando el 2% del recargo es: ",cuota)
